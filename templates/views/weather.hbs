@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather ForeCast</title>
+    {{>headerLinks}}
+</head>
+
+<body>
+    {{!-- Navbar --}}
+    {{>navbar}}
+
+    {{!-- main content --}}
+    <div class="container-fluid main_header mb-5">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="main_content">
+                    <form class="temp_form">
+                        <input type="text" id="cityName" placeholder="Enter Your City Name" autocomplete="off" />
+                        <input type="submit" value="search" id="submitBtn" />
+                    </form>
+                </div>
+
+                <div class="temp_info">
+                    <div class="top_layer">
+                        <p id="day">Tuesday</p>
+                        <p id="today_date">13 Oct</p>
+                    </div>
+                    <div class="main_layer">
+                        <p id="city_name">Get Output Here</p>
+                        <div class="middle_layer data_hide">
+                            <p id="temp"><span id="temp_val">0</span><sup>o</sup>C</p>
+                            <p id="temp_status"><i class="fa-solid fa-cloud"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- footer --}}
+    {{>footer}}
+
+    <script src="/js/main.js"></script>
+    <script>
+        const day = document.getElementById("day");
+        const today_date = document.getElementById("today_date");
+
+        const getToday = () => {
+            let weekDay = new Array(7);
+
+            weekDay[0] = "Sunday";
+            weekDay[1] = "Monday";
+            weekDay[2] = "Tuesday";
+            weekDay[3] = "Wednesday";
+            weekDay[4] = "Thursday";
+            weekDay[5] = "Friday";
+            weekDay[6] = "Saturday";
+
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+
+
+            let today = new Date();
+            let today_info = { day: weekDay[today.getDay()], date: today.getDate(), month: months[today.getMonth()] };
+
+            return today_info;
+        }
+        day.innerText = getToday().day;
+        today_date.innerText = `${getToday().date < 10 ? "0" + getToday().date : getToday().date} ${getToday().month}`;
+    </script>
+
+</body>
+
+</html>

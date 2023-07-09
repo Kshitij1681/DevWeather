@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    {{>headerLinks}}
+    <style>
+        .main_header_left {
+            height: auto;
+        }
+
+        .main_header_left figure {
+            height: 100%;
+        }
+
+        .main_header_left figure img {
+            width: 100%;
+            filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.3));
+        }
+    </style>
+</head>
+
+<body>
+    {{>navbar}}
+
+    {{!-- main content --}}
+    <div class="container-fluid main_header mb-5">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row justify-content-center">
+
+                    <div class="col-md-6 col-12 main_header_left align-items-center">
+                        <figure>
+                            <img src="/images/error_img.svg" alt="error_image" />
+                        </figure>
+                        <p>Welcome to Tech World</p>
+                        <h1 class="text-center">{{errorMsg}}</h1>
+                        <a href="/"><button>Go Back</button></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- footer --}}
+    {{>footer}}
+</body>
+
+</html>

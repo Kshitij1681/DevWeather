@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    {{>headerLinks}}
+</head>
+
+<body>
+
+    {{!-- Navbar --}}
+    {{>navbar}}
+
+    <!-- main content header -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <!-- right side div -->
+                    <div class="col-md-6 col-12 main_header_right align-items-start">
+                        <figure>
+                            <img src="/images/about_image.jpg" alt="about_image" class="img-fluid rounded-circle" />
+                        </figure>
+                    </div>
+
+                    <!-- left side div -->
+                    <div class="col-md-6 col-12 main_header_left">
+                        <p>Welcome to weather app</p>
+                        <h1>Get the Latest <span class="text_highlight">Weather</span> Info Of Your City</h1>
+                        <a href="https://www.linkedin.com/in/kshitij-kumar-03b804214/" target="_blank"><button>About Me</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer  -->
+    {{>footer}}
+
+    <!-- Bootstrap Script -->
+    {{>scriptLinks}}
+</body>
+
+</html>
